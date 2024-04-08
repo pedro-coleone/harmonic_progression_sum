@@ -21,7 +21,6 @@ void sum(char* output, const long unsigned int d, const long unsigned int n) {
         for (long unsigned int digit = 0; digit < d + 11 && remainder; ++digit) {
             long unsigned int div = remainder / i;
             long unsigned int mod = remainder % i;
-            #pragma omp atomic
             digits[digit] += div;
             remainder = mod * 10;
         }
